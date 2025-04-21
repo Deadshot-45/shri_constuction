@@ -40,7 +40,8 @@ const Projects = () => {
               className="bg-white rounded-lg shadow-md overflow-hidden"
             >
               <div className="h-48 relative">
-                <img
+                <img lazyLoad="true"
+          loading="lazy" 
                   src={project.image.src}
                   alt={project.image.alt}
                   className="w-full h-full object-cover"
