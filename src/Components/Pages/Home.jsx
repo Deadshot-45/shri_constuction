@@ -96,8 +96,8 @@ const Home = () => {
       person: "Patricia Thompson",
     },
   ];
-  
-    // Sample data for news section
+
+  // Sample data for news section
   const NewsSection = [
     {
       img: "https://htmlbeans.com/html/vicin/images/img06.jpg",
@@ -134,6 +134,8 @@ const Home = () => {
       <div className="w-full flex items-center justify-center">
         <header className="relative w-full h-screen overflow-hidden">
           <img
+            lazyLoad="true"
+            loading="lazy"
             src={
               "https://png.pngtree.com/thumb_back/fw800/background/20240611/pngtree-construction-machine-road-repair-work-image_15747549.jpg"
             }
@@ -194,6 +196,8 @@ const Home = () => {
         </div>
         <div className="w-[30%] flex justify-center items-center">
           <img
+            lazyLoad="true"
+            loading="lazy"
             src={images.home.features.quality.src}
             alt={images.home.features.quality.alt}
             className=" aspect-square mt-8 rounded-sm shadow-lg"
@@ -205,6 +209,8 @@ const Home = () => {
       <section className="w-full h-[40dvh] flex justify-center items-center">
         <div className="w-full h-full relative">
           <img
+            lazyLoad="true"
+            loading="lazy"
             src="https://www.grantthornton.in/globalassets/1.-member-firms/india/new-homepage/media/1.-hero-banners_repeat-visits/1440x600px_hero_banner_shutterstock_1679316820.jpg"
             alt="Road construction bg"
             className="w-full h-full absolute rounded-sm shadow-lg"
@@ -212,8 +218,10 @@ const Home = () => {
           <div className="absolute bg-black/70 z-500 w-full h-full"></div>
         </div>
         <div className="absolute z-6000 flex justify-evenly items-center text-center">
-          <div className="w-[15%] space-y-4">
+          <div className="w-[15%] max-lg:w-[25%] space-y-4">
             <img
+              lazyLoad="true"
+              loading="lazy"
               src="https://htmlbeans.com/html/vicin/images/icon01.png"
               alt="trolly"
               className="w-[80px] mx-auto aspect-auto"
@@ -224,8 +232,10 @@ const Home = () => {
               ante. Nulla enim velit, porttitor sed magna at, porttitor.
             </p>
           </div>
-          <div className="w-[15%] space-y-4">
+          <div className="w-[15%] max-lg:w-[25%] space-y-4">
             <img
+              lazyLoad="true"
+              loading="lazy"
               src="https://htmlbeans.com/html/vicin/images/icon02.png"
               alt="plumbing"
               className="w-[60px] mx-auto aspect-auto"
@@ -236,8 +246,10 @@ const Home = () => {
               ante. Nulla enim velit, porttitor sed magna at, porttitor.
             </p>
           </div>
-          <div className="w-[15%] space-y-4">
+          <div className="w-[15%] max-lg:w-[25%] space-y-4">
             <img
+              lazyLoad="true"
+              loading="lazy"
               src="https://htmlbeans.com/html/vicin/images/icon03.png"
               alt="roofing"
               className="w-[60px] mx-auto aspect-auto"
@@ -263,9 +275,11 @@ const Home = () => {
           {Projects.map((project) => (
             <div
               key={uuidv4()}
-              className="w-[350px] aspect-auto relative group overflow-hidden shadow-lg"
+              className="w-[350px] max-lg:w-[45%] cursor-pointer aspect-auto relative group overflow-hidden shadow-lg"
             >
               <img
+                lazyLoad="true"
+                loading="lazy"
                 src={project.src}
                 alt={project.alt}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 transform"
@@ -287,6 +301,8 @@ const Home = () => {
       <section className="w-full  flex justify-center items-center">
         <div className="w-full h-[45dvh] relative ">
           <img
+            lazyLoad="true"
+            loading="lazy"
             src="https://htmlbeans.com/html/vicin/images/img17.jpg"
             alt="Testimony bg"
             className="w-full h-full absolute rounded-sm shadow-lg"
@@ -297,7 +313,7 @@ const Home = () => {
           <button
             type="button"
             onClick={handlePrevTestimony}
-            className="p-3 rounded-full bg-black/20 text-xl text-white/80 hover:bg-black/40 hover:text-white transition-all duration-300 ease-in-out"
+            className="p-3 cursor-pointer rounded-full bg-black/20 text-xl text-white/80 hover:bg-black/40 hover:text-white transition-all duration-300 ease-in-out"
             aria-label="Previous testimony"
           >
             <FaChevronLeft />
@@ -318,7 +334,7 @@ const Home = () => {
           <button
             type="button"
             onClick={handleNextTestimony}
-            className="p-3 rounded-full bg-black/20 text-xl text-white/80 hover:bg-black/40 hover:text-white transition-all duration-300 ease-in-out"
+            className="p-3 cursor-pointer rounded-full bg-black/20 text-xl text-white/80 hover:bg-black/40 hover:text-white transition-all duration-300 ease-in-out"
             aria-label="Next testimony"
           >
             <FaChevronRight />
@@ -327,7 +343,6 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-
       <section className="w-full min-h-[40dvh] flex flex-col gap-4 justify-center items-center bg-white">
         <article className="max-w-[45%] mx-auto flex flex-col justify-center gap-4 mt-14">
           <h1 className="text-[30px] uppercase leading-10 font-bold text-gray-700">
@@ -336,10 +351,12 @@ const Home = () => {
           <div className="bg-amber-500 w-[40%] mx-auto h-1"></div>
         </article>
 
-        <article className="w-[80%] flex flex-wrap justify-center items-center gap-6 mt-10">
-          <div className="w-[45%] flex gap-2 mx-auto p-8">
+        <article className="w-[80%] flex max-lg:flex-col flex-wrap justify-center items-center gap-6 mt-10">
+          <div className="w-[45%] flex gap-2 mx-auto p-8 max-lg:p-0">
             <div className="w-1/2">
               <img
+                lazyLoad="true"
+                loading="lazy"
                 src={
                   "https://img.freepik.com/free-photo/aerial-view-suzhou-overpass-night_1359-524.jpg"
                 }
@@ -349,6 +366,8 @@ const Home = () => {
             </div>
             <div className="w-1/2 space-y-2">
               <img
+                lazyLoad="true"
+                loading="lazy"
                 src={
                   "https://img.freepik.com/free-photo/young-man-holding-construction-hard-hat_23-2148461532.jpg"
                 }
@@ -356,6 +375,8 @@ const Home = () => {
                 className="w-full h-w-[48%] object-cover rounded-sm shadow-lg"
               />
               <img
+                lazyLoad="true"
+                loading="lazy"
                 src={
                   "https://img.freepik.com/free-photo/young-man-holding-construction-hard-hat_23-2148461532.jpg"
                 }
@@ -365,7 +386,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="w-[45%] mx-auto p-8 space-y-4">
+          <div className="w-[45%] max-lg:flex flex-wrap max-lg:p-0 max-lg:mt-6 max-lg:w-full mx-auto p-8 space-y-4">
             <div className="flex gap-6 items-center">
               <BiLike className="text-7xl text-amber-500" />
               <p>
@@ -395,12 +416,14 @@ const Home = () => {
       <section className="w-full h-full bg-white py-20">
         <div className="w-full h-[45dvh] relative">
           <img
+            lazyLoad="true"
+            loading="lazy"
             src="https://htmlbeans.com/html/vicin/images/img05.jpg"
             alt="Project bg"
             className="w-full h-full absolute rounded-sm shadow-lg"
           />
           <div className="flex relative z-500 w-[80%] mx-auto h-full">
-            <div className="w-[35%] flex flex-col justify-center gap-3">
+            <div className="w-[35%] max-lg:w-[60%] flex flex-col justify-center gap-3">
               <span className="text-3xl w-[85%] uppercase font-bold text-gray-700">
                 We are always ready to help you
               </span>
@@ -415,11 +438,13 @@ const Home = () => {
                 OUR PROJECTS
               </button>
             </div>
-            <div className="w-[50%] relative mx-auto flex justify-center items-center">
+            <div className="w-[50%] max-lg:w-[40%] relative mx-auto flex justify-center items-center">
               <img
+                lazyLoad="true"
+                loading="lazy"
                 src="	https://htmlbeans.com/html/vicin/images/img13.png"
                 alt="Working men"
-                className="w-[350px] absolute top-[-20%] h-[120%]"
+                className="w-[350px] max-lg:w-[300px] absolute top-[-20%] h-[120%]"
               />
             </div>
           </div>
@@ -438,37 +463,41 @@ const Home = () => {
 
         {/* News Cards mapping */}
         <div className="w-[80%] mx-auto flex flex-wrap justify-between items-center mt-10 mb-16">
-          {NewsSection.map(news=>(
-            <div key={uuidv4()} className="w-[45%] h-full flex gap-6 relative mt-6">
-            <div className="w-[250px] cursor-pointer h-[130px] relative overflow-hidden group">
-              <img
-                src={news.img}
-                alt={news.title}
-                className="w-full h-full object-cover rounded-sm shadow-lg transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
-                <span className="text-white text-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  View Article
-                </span>
+          {NewsSection.map((news) => (
+            <div
+              key={uuidv4()}
+              className="w-[45%] max-lg:w-[90%] h-full flex gap-6 relative mt-6"
+            >
+              <div className="w-[250px] cursor-pointer h-[130px] mx-auto relative overflow-hidden group">
+                <img
+                  lazyLoad="true"
+                  loading="lazy"
+                  src={news.img}
+                  alt={news.title}
+                  className="w-full h-full object-cover rounded-sm shadow-lg transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
+                  <span className="text-white text-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    View Article
+                  </span>
+                </div>
+              </div>
+              <div className="h-[130px] w-[calc(100%-270px)] flex flex-col justify-between items-start relative">
+                <h3 className="max-h-[20%] text-xl font-bold text-gray-700 uppercase overflow-clip">
+                  {news.title} ...
+                </h3>
+                <p className="text-gray-600 text-sm max-h-[70%] overflow-clip">
+                  {news.description}...
+                </p>
+                <button
+                  type="button"
+                  className="cursor-pointer text-[#fdc700] text-[15px] underline font-bold hover:text-[#ffd027] transition duration-300 ease-in-out"
+                >
+                  Read More
+                </button>
               </div>
             </div>
-            <div className="h-[130px] w-[calc(100%-270px)] flex flex-col justify-between items-start relative">
-              <h3 className="text-xl font-bold text-gray-700 uppercase">
-                {news.title.slice(0, 20)} ...
-              </h3>
-              <p className="text-gray-600 text-sm">
-                {news.description.slice(0, 120)}...
-              </p>
-              <button
-                type="button"
-                className="cursor-pointer text-[#fdc700] text-[15px] underline font-bold hover:text-[#ffd027] transition duration-300 ease-in-out"
-              >
-                Read More
-              </button>
-            </div>
-          </div>
           ))}
-         
         </div>
       </section>
     </div>
