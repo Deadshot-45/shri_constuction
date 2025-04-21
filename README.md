@@ -1,6 +1,6 @@
 # Shri Construction Website
 
-A modern, responsive website for Shri Construction built with React and Tailwind CSS.
+A modern Real Estate website built using ReactJS and Tailwind CSS, showcasing company projects, contact information, and key property details with a responsive and user-friendly design.
 
 ## 🚀 Features
 
