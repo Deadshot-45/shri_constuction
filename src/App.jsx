@@ -17,7 +17,7 @@ const App = () => {
         <Router>
           <ScrollToTop />
           <NavBar />
-          <div className="my-16">
+          <div className="">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />

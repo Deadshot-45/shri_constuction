@@ -3,3 +3,7 @@
 html{
     scroll-behavior: smooth;
 }
+
+@theme{
+    --breakpoint-xs: 480px;
+}

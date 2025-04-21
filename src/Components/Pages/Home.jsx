@@ -140,27 +140,27 @@ const Home = () => {
               "https://png.pngtree.com/thumb_back/fw800/background/20240611/pngtree-construction-machine-road-repair-work-image_15747549.jpg"
             }
             alt="Bg-header img"
-            className="absolute w-full h-full object-cover"
+            className="absolute w-full h-full z-10 object-cover"
           />
           {/* Add a dark overlay to ensure text visibility */}
-          <div className="absolute bg-black/40 z-500 w-full h-full"></div>
-          <div className="relative z-6000 p-4 h-full flex flex-col justify-center items-center text-center gap-4 mt-5">
+          <div className="absolute bg-black/40 z-20 w-full h-full"></div>
+          <div className="relative z-20 p-4 h-full flex flex-col justify-center items-center text-center gap-4 mt-5">
             <h2
-              className="text-5xl font-bold flex space-x-4 text-white drop-shadow-lg"
+              className="text-5xl max-xs:text-4xl font-bold text-center space-x-4 text-white drop-shadow-lg"
               style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.8)" }}
             >
               <span className="text-white">Welcome to</span>
               <span className="text-[#fdc700]">Shri Construction</span>
             </h2>
-            <p className="text-lg font-sans text-white drop-shadow-lg">
+            <p className="text-lg max-xs:text-sm font-sans text-white drop-shadow-lg">
               Your trusted partner in quality construction and design.
             </p>
-            <p className="text-lg font-sans text-white drop-shadow-lg">
+            <p className="text-lg max-xs:text-sm font-sans text-white drop-shadow-lg">
               Building dreams with precision and care.
             </p>
             <Link
               to="/"
-              className="bg-[#fdc700] text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-[#ffd027] transition duration-300 ease-in-out"
+              className="bg-[#fdc700] max-xs:text-sm text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-[#ffd027] transition duration-300 ease-in-out"
             >
               Get Started
             </Link>
@@ -169,10 +169,9 @@ const Home = () => {
       </div>
 
       {/* Experience Section */}
-
-      <section className="w-[80%] flex justify-between items-center py-12">
-        <div className="max-w-[45%] flex flex-col justify-center gap-8">
-          <h1 className="text-[40px] uppercase leading-10 font-bold text-gray-700">
+      <section className="w-[80%] max-xs:w-[85%] flex max-md:flex-col justify-between items-center py-12 max-xs:pt-0">
+        <div className="w-[45%] max-md:w-full flex flex-col justify-center gap-8 max-xs:gap-4">
+          <h1 className="text-[40px] max-xs:text-4xl uppercase leading-10 font-bold text-gray-700">
             We are the leader in the construction.
           </h1>
           <div className="bg-amber-500 w-[40%] h-1"></div>
@@ -189,24 +188,24 @@ const Home = () => {
           </p>
           <Link
             to="/about"
-            className="text-lg text-[#fdc700] font-bold underline py-3 rounded-full hover:text-[#ffd027] transition duration-300 ease-in-out"
+            className="text-lg text-[#fdc700] font-bold underline py-3 max-xs:py-0 rounded-full hover:text-[#ffd027] transition duration-300 ease-in-out"
           >
             LEARN MORE
           </Link>
         </div>
-        <div className="w-[30%] flex justify-center items-center">
+        <div className="w-[30%] max-md:w-3/4 flex justify-center items-center">
           <img
             lazyLoad="true"
             loading="lazy"
             src={images.home.features.quality.src}
             alt={images.home.features.quality.alt}
-            className=" aspect-square mt-8 rounded-sm shadow-lg"
+            className="aspect-square max-md:aspect-auto mt-8 rounded-sm shadow-lg"
           />
         </div>
       </section>
 
       {/* Service Section */}
-      <section className="w-full h-[40dvh] flex justify-center items-center">
+      <section className="w-full h-[40dvh] max-xs:h-[50dvh] flex justify-center items-center">
         <div className="w-full h-full relative">
           <img
             lazyLoad="true"
@@ -218,44 +217,44 @@ const Home = () => {
           <div className="absolute bg-black/70 z-500 w-full h-full"></div>
         </div>
         <div className="absolute z-6000 flex justify-evenly items-center text-center">
-          <div className="w-[15%] max-lg:w-[25%] space-y-4">
+          <div className="w-[15%] max-lg:w-[25%] space-y-4 min-xs:max-xs:space-y-1">
             <img
               lazyLoad="true"
               loading="lazy"
               src="https://htmlbeans.com/html/vicin/images/icon01.png"
               alt="trolly"
-              className="w-[80px] mx-auto aspect-auto"
+              className="w-[80px] max-xs:w-[50px] max-md:w-[60px] mx-auto aspect-auto"
             />
-            <h1 className="text-3xl font-bold text-white">Construction</h1>
-            <p className="text-white text-sm">
+            <h1 className="text-3xl font-bold max-xs:text-sm min-xs:max-md:text-xl text-white">Construction</h1>
+            <p className="text-white text-sm max-xs:text-[11px] min-xs:max-sm:text-[12px]">
               Mauris quam neque, ullamcorper sit amet lorem in, aliquet sagittis
               ante. Nulla enim velit, porttitor sed magna at, porttitor.
             </p>
           </div>
-          <div className="w-[15%] max-lg:w-[25%] space-y-4">
+          <div className="w-[15%] max-lg:w-[25%] space-y-4 min-xs:max-xs:space-y-1">
             <img
               lazyLoad="true"
               loading="lazy"
               src="https://htmlbeans.com/html/vicin/images/icon02.png"
               alt="plumbing"
-              className="w-[60px] mx-auto aspect-auto"
+              className="w-[80px] max-xs:w-[40px] max-md:w-[60px] mx-auto aspect-auto"
             />
-            <h1 className="text-3xl font-bold text-white">Plumbing</h1>
-            <p className="text-white text-sm">
+            <h1 className="text-3xl font-bold max-xs:text-sm min-xs:max-md:text-xl text-white">Plumbing</h1>
+            <p className="text-white text-sm max-xs:text-[11px] min-xs:max-sm:text-[12px]">
               Mauris quam neque, ullamcorper sit amet lorem in, aliquet sagittis
               ante. Nulla enim velit, porttitor sed magna at, porttitor.
             </p>
           </div>
-          <div className="w-[15%] max-lg:w-[25%] space-y-4">
+          <div className="w-[15%] max-lg:w-[25%] space-y-4 min-xs:max-xs:space-y-1 ">
             <img
               lazyLoad="true"
               loading="lazy"
               src="https://htmlbeans.com/html/vicin/images/icon03.png"
               alt="roofing"
-              className="w-[60px] mx-auto aspect-auto"
+              className="w-[80px] max-xs:w-[40px] max-md:w-[60px] mx-auto aspect-auto"
             />
-            <h1 className="text-3xl font-bold text-white">Roofing</h1>
-            <p className="text-white text-sm">
+            <h1 className="text-3xl font-bold max-xs:text-sm min-xs:max-md:text-xl text-white">Roofing</h1>
+            <p className="text-white text-sm max-xs:text-[11px] min-xs:max-sm:text-[12px]">
               Mauris quam neque, ullamcorper sit amet lorem in, aliquet sagittis
               ante. Nulla enim velit, porttitor sed magna at, porttitor.
             </p>
@@ -265,8 +264,8 @@ const Home = () => {
 
       {/* Our Projects Section */}
       <section className="w-[80%] flex flex-col justify-between items-center py-12">
-        <div className="max-w-[45%] mx-auto flex flex-col justify-center gap-8">
-          <h1 className="text-[40px] uppercase leading-10 font-bold text-gray-700">
+        <div className="mx-auto flex flex-col justify-center gap-8">
+          <h1 className="text-[40px] max-xs:text-4xl uppercase leading-10 font-bold text-gray-700">
             Our Projects
           </h1>
           <div className="bg-amber-500 w-[40%] mx-auto h-1"></div>
@@ -309,7 +308,7 @@ const Home = () => {
           />
           <div className="absolute bg-black/70 z-500 w-full h-full"></div>
         </div>
-        <div className="w-[65%] absolute z-6000 text-white flex justify-between items-center text-center gap-8">
+        <div className="w-[65%] max-sm:w-[80%] absolute z-6000 text-white flex justify-between items-center text-center gap-8">
           <button
             type="button"
             onClick={handlePrevTestimony}
@@ -319,14 +318,14 @@ const Home = () => {
             <FaChevronLeft />
           </button>
           <div className="w-[65%] space-y-6 transition-all duration-500 ease-in-out transform">
-            <p className="text-xl font-serif italic leading-relaxed">
+            <p className="text-xl max-md:text-sm font-serif italic leading-relaxed">
               "{Testimony[testimonyIndex].message}"
             </p>
             <div className="flex flex-col items-center space-y-2">
-              <span className="text-lg font-bold tracking-wide">
+              <span className="text-lg max-sm:text-sm font-bold tracking-wide">
                 {Testimony[testimonyIndex].person}
               </span>
-              <span className="text-amber-400 text-sm uppercase tracking-wider">
+              <span className="text-amber-400 text-sm max-sm:text-[10px] uppercase tracking-wider">
                 {Testimony[testimonyIndex].title}
               </span>
             </div>
@@ -342,17 +341,17 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Why Choose US Section */}
       <section className="w-full min-h-[40dvh] flex flex-col gap-4 justify-center items-center bg-white">
-        <article className="max-w-[45%] mx-auto flex flex-col justify-center gap-4 mt-14">
+        <article className="max-w-[65%] mx-auto flex flex-col justify-center gap-4 mt-14">
           <h1 className="text-[30px] uppercase leading-10 font-bold text-gray-700">
             Why Choose Us
           </h1>
           <div className="bg-amber-500 w-[40%] mx-auto h-1"></div>
         </article>
 
-        <article className="w-[80%] flex max-lg:flex-col flex-wrap justify-center items-center gap-6 mt-10">
-          <div className="w-[45%] flex gap-2 mx-auto p-8 max-lg:p-0">
+        <article className="w-[80%] max-sm:w-[95%] flex max-lg:flex-col flex-wrap justify-center items-center gap-6 mt-10">
+          <div className="w-[45%] max-lg:w-[80%] flex gap-2 mx-auto p-8 max-lg:p-0">
             <div className="w-1/2">
               <img
                 lazyLoad="true"
@@ -386,24 +385,24 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="w-[45%] max-lg:flex flex-wrap max-lg:p-0 max-lg:mt-6 max-lg:w-full mx-auto p-8 space-y-4">
+          <div className="w-[45%] max-lg:flex flex-wrap max-lg:p-2 max-lg:mt-6 max-lg:w-full mx-auto p-8 space-y-4">
             <div className="flex gap-6 items-center">
               <BiLike className="text-7xl text-amber-500" />
-              <p>
+              <p className="max-xs:text-sm">
                 We are a team of experienced professionals who are passionate
                 about delivering high-quality construction services.
               </p>
             </div>
             <div className="flex gap-6 items-center">
               <TiStopwatch className="text-7xl text-amber-500" />
-              <p>
+              <p className="max-xs:text-sm">
                 We are a team of experienced professionals who are passionate
                 about delivering high-quality construction services.
               </p>
             </div>
             <div className="flex gap-6 items-center">
               <IoDiamondOutline className="text-7xl text-amber-500" />
-              <p>
+              <p className="max-xs:text-sm">
                 We are a team of experienced professionals who are passionate
                 about delivering high-quality construction services.
               </p>
@@ -414,7 +413,7 @@ const Home = () => {
 
       {/* Projects Section */}
       <section className="w-full h-full bg-white py-20">
-        <div className="w-full h-[45dvh] relative">
+        <div className="w-full h-[45dvh] max-sm:h-[35dvh] relative">
           <img
             lazyLoad="true"
             loading="lazy"
@@ -422,18 +421,18 @@ const Home = () => {
             alt="Project bg"
             className="w-full h-full absolute rounded-sm shadow-lg"
           />
-          <div className="flex relative z-500 w-[80%] mx-auto h-full">
+          <div className="flex relative z-500 w-[80%] max-sm:w-[95%] mx-auto h-full">
             <div className="w-[35%] max-lg:w-[60%] flex flex-col justify-center gap-3">
-              <span className="text-3xl w-[85%] uppercase font-bold text-gray-700">
+              <span className="text-3xl max-sm:text-[16px] w-[85%] uppercase font-bold text-gray-700">
                 We are always ready to help you
               </span>
-              <p className="text-md text-gray-600">
+              <p className="text-md max-sm:text-[12px] text-gray-600">
                 There are many ways to contact us. You may drop us a line, give
                 us a call or send an email, choose what suits you the most.
               </p>
               <Link
                 to={"/projects"}
-                className="w-[200px] bg-[#fdc700] text-gray-800 px-6 py-3 font-bold hover:bg-[#ffd027] transition duration-300 ease-in-out mt-4"
+                className="w-[200px] max-sm:w-[120px] max-sm:text-[12px] max-sm:p-2 bg-[#fdc700] text-gray-800 px-6 py-3 font-bold hover:bg-[#ffd027] transition duration-300 ease-in-out mt-4"
               >
                 OUR PROJECTS
               </Link>
@@ -454,7 +453,7 @@ const Home = () => {
       {/* News Section */}
 
       <section className="w-full h-full bg-white">
-        <div className="w-1/2 mx-auto space-y-2.5">
+        <div className="min-w-1/2 mx-auto space-y-2.5">
           <h2 className="text-3xl font-bold text-center text-gray-700 uppercase">
             Recent News
           </h2>
@@ -462,13 +461,13 @@ const Home = () => {
         </div>
 
         {/* News Cards mapping */}
-        <div className="w-[80%] mx-auto flex flex-wrap justify-between items-center mt-10 mb-16">
+        <div className="w-[80%] max-xs:w-[90%] mx-auto flex flex-wrap justify-between items-center mt-10 mb-16">
           {NewsSection.map((news) => (
             <div
               key={uuidv4()}
               className="w-[45%] max-lg:w-[90%] h-full flex gap-6 relative mt-6"
             >
-              <div className="w-[250px] cursor-pointer h-[130px] mx-auto relative overflow-hidden group">
+              <div className="w-[250px] max-xs:w-[130px] cursor-pointer h-[130px] max-xs:h-[100px] mx-auto relative overflow-hidden group">
                 <img
                   lazyLoad="true"
                   loading="lazy"
@@ -482,16 +481,16 @@ const Home = () => {
                   </span>
                 </div>
               </div>
-              <div className="h-[130px] w-[calc(100%-270px)] flex flex-col justify-between items-start relative">
-                <h3 className="max-h-[20%] text-xl font-bold text-gray-700 uppercase overflow-clip">
+              <div className="h-[130px] max-xs:h-[100px] w-[calc(100%-270px)] max-xs:w-[calc(100%-150px)] flex flex-col justify-between items-start relative">
+                <h3 className="max-h-[20%] max-xs:h-[15%] text-xl max-sm:text-[12px] font-bold text-gray-700 uppercase overflow-clip">
                   {news.title} ...
                 </h3>
-                <p className="text-gray-600 text-sm max-h-[70%] overflow-clip">
+                <p className="text-gray-600 text-sm max-sm:text-[10px] max-sm:leading-3 max-h-[68%] overflow-clip">
                   {news.description}...
                 </p>
                 <button
                   type="button"
-                  className="cursor-pointer text-[#fdc700] text-[15px] underline font-bold hover:text-[#ffd027] transition duration-300 ease-in-out"
+                  className="cursor-pointer text-[#fdc700] text-[15px] max-sm:text-[11px] underline font-bold hover:text-[#ffd027] transition duration-300 ease-in-out"
                 >
                   Read More
                 </button>

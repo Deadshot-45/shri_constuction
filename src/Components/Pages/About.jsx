@@ -20,8 +20,8 @@ const About = () => {
       {/* Main Content */}
       <div className="w-[80%] py-16 space-y-16">
         {/* Company Overview */}
-        <section className="flex gap-12 items-center">
-          <div className="w-1/2 space-y-6">
+        <section className="flex max-sm:flex-col gap-12 items-center">
+          <div className="w-1/2 max-sm:w-[90%] space-y-6">
             <h2 className="text-4xl font-bold text-gray-800">
               Building Excellence Since 2023
             </h2>
@@ -33,7 +33,7 @@ const About = () => {
               construction industry.
             </p>
           </div>
-          <div className="w-1/2">
+          <div className="w-1/2 max-sm:w-[90%]">
             <img lazyLoad="true"
           loading="lazy" 
               src="https://png.pngtree.com/thumb_back/fh260/background/20240620/pngtree-painting-of-a-contemporary-building-construction-site-on-white-background-including-image_15883562.jpg"
@@ -44,7 +44,7 @@ const About = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="grid grid-cols-4 gap-8">
+        <section className="grid grid-cols-4 max-xs:grid-cols-1 xs:max-sm:grid-cols-2 gap-8">
           {[
             {
               icon: BiBuildingHouse,
@@ -69,7 +69,7 @@ const About = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section className="grid grid-cols-2 gap-12">
+        <section className="grid grid-cols-2 max-sm:grid-cols-1 gap-12">
           <div className="space-y-4 p-8 bg-gray-50 rounded-lg">
             <h3 className="text-2xl font-bold text-gray-800">Our Mission</h3>
             <div className="w-[15%] h-1 bg-amber-500" />

@@ -1,45 +1,9 @@
 import React from "react";
+import { ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ContactForm from "../ContactForm";
 
 const Contact = () => {
-  const [formData, setFormData] = React.useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
-  // const [isFormSubmitted, setIsFormSubmitted] = React.useState(false);
-  const [isLoading, setIsLoading] = React.useState(false);
-  // const [error, setError] = React.useState(null);
-  const [isError, setIsError] = React.useState(false);
-  // const [isSuccess, setIsSuccess] = React.useState(false);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
-      // setIsFormSubmitted(true);
-      // setIsSuccess(true);
-    }, 2000); // Simulate a network request
-  };
-
   const contactDetails = [
     {
       icon: (
@@ -154,357 +118,212 @@ const Contact = () => {
   ];
 
   return (
-    <div className="py-16">
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-3 leading-tight">
-            Get in Touch
-          </h1>
-          <div className="bg-amber-500 w-[100px] mx-auto h-1 mb-3"></div>
-          <p className="text-md text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-            With over 20 years of experience in construction excellence, RD
-            Builders is your trusted partner for all construction needs. Reach
-            out to us through any of the channels below.
-          </p>
-        </div>
-
-        {/* Contact Details Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {contactDetails.map((item, index) => (
-            <div
-              key={index}
-              className="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100"
-            >
-              <div className="flex flex-col items-center justify-center">
-                <div className="mb-6 bg-yellow-50 p-4 rounded-full">
-                  {item.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors">
-                  {item.title}
-                </h3>
-                <div className="space-y-3 text-center">
-                  {item.details.map((detail, idx) =>
-                    detail.link ? (
-                      <a
-                        key={idx}
-                        href={detail.link}
-                        className="block text-gray-600 hover:text-yellow-600 transition-colors"
-                      >
-                        {detail.text}
-                      </a>
-                    ) : (
-                      <p key={idx} className="text-gray-600">
-                        {detail.text}
-                      </p>
-                    )
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Contact Form Section */}
-        <div className="my-16 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-            Send Us a Message
-          </h2>
-          <div className="bg-amber-500 w-[100px] mx-auto h-1 mb-8"></div>
-
-          <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Your Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all duration-200"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all duration-200"
-                  placeholder="john@example.com"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  minLength={10}
-                  maxLength={10}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all duration-200"
-                  placeholder="+91 1234567890"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Subject *
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all duration-200"
-                  placeholder="Project Inquiry"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Your Message *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                value={formData.message}
-                onChange={handleChange}
-                rows="6"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all duration-200 resize-none"
-                placeholder="Tell us about your project..."
-              ></textarea>
-            </div>
-
-            <div className="text-center">
-              <button
-                type="submit"
-                loading={isLoading}
-                disabled={isLoading}
-                className="inline-flex cursor-pointer items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-colors duration-200"
-              >
-                Send Message
-                {isLoading || (
-                  <svg
-                    className="ml-2 -mr-1 w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                )}
-                {isLoading && (
-                  <div className="pl-3">
-                    <svg
-                    width="20"
-                    height="20"
-                    fill="currentColor"
-                    class="mr-2 animate-spin"
-                    viewBox="0 0 1792 1792"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M526 1394q0 53-37.5 90.5t-90.5 37.5q-52 0-90-38t-38-90q0-53 37.5-90.5t90.5-37.5 90.5 37.5 37.5 90.5zm498 206q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-704-704q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm1202 498q0 52-38 90t-90 38q-53 0-90.5-37.5t-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-964-996q0 66-47 113t-113 47-113-47-47-113 47-113 113-47 113 47 47 113zm1170 498q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-640-704q0 80-56 136t-136 56-136-56-56-136 56-136 136-56 136 56 56 136zm530 206q0 93-66 158.5t-158 65.5q-93 0-158.5-65.5t-65.5-158.5q0-92 65.5-158t158.5-66q92 0 158 66t66 158z"></path>
-                  </svg>
-                  </div>
-                )}
-              </button>
-            </div>
-          </form>
-        </div>
-
-        {/* Additional Information */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="bg-yellow-100 p-2 rounded-lg mr-3">
-                <svg
-                  className="w-6 h-6 text-yellow-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </span>
-              Our Commitment
-            </h2>
-            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-              At RD Builders, we're committed to providing exceptional service
-              and quality craftsmanship. Our team of experienced professionals
-              is ready to assist you with:
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Section */}
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-900 mb-3 leading-tight">
+              Get in Touch
+            </h1>
+            <div className="bg-amber-500 w-[100px] mx-auto h-1 mb-3"></div>
+            <p className="text-md text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+              With over 20 years of experience in construction excellence, RD
+              Builders is your trusted partner for all construction needs. Reach
+              out to us through any of the channels below.
             </p>
-            <ul className="space-y-4 text-gray-600">
-              {[
-                "Free project consultations",
-                "Detailed project estimates",
-                "Expert construction advice",
-                "Emergency construction services",
-                "Renovation planning assistance",
-              ].map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-center hover:text-yellow-600 transition-colors"
-                >
-                  <svg
-                    className="w-5 h-5 mr-3 text-yellow-500"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
 
-          <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="bg-yellow-100 p-2 rounded-lg mr-3">
-                <svg
-                  className="w-6 h-6 text-yellow-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                </svg>
-              </span>
-              Service Areas
-            </h2>
-            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-              We provide our construction services throughout the following
-              areas:
-            </p>
-            <div className="grid grid-cols-2 gap-8">
-              <div>
-                <h3 className="font-bold text-gray-900 mb-4 text-lg">
-                  Primary Regions
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Construction City",
-                    "Builder's Valley",
-                    "Architect Town",
-                    "Developer's District",
-                  ].map((item, index) => (
-                    <li
-                      key={index}
-                      className="flex items-center text-gray-600 hover:text-yellow-600 transition-colors"
-                    >
-                      <svg
-                        className="w-4 h-4 mr-2 text-yellow-500"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          {/* Contact Details Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {contactDetails.map((item, index) => (
+              <div
+                key={index}
+                className="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100"
+              >
+                <div className="flex flex-col items-center justify-center">
+                  <div className="mb-6 bg-yellow-50 p-4 rounded-full">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors">
+                    {item.title}
+                  </h3>
+                  <div className="space-y-3 text-center">
+                    {item.details.map((detail, idx) =>
+                      detail.link ? (
+                        <a
+                          key={idx}
+                          href={detail.link}
+                          className="block text-gray-600 hover:text-yellow-600 transition-colors"
+                        >
+                          {detail.text}
+                        </a>
+                      ) : (
+                        <p key={idx} className="text-gray-600">
+                          {detail.text}
+                        </p>
+                      )
+                    )}
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="font-bold text-gray-900 mb-4 text-lg">
-                  Extended Areas
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Metro Region",
-                    "Suburban District",
-                    "Coastal Area",
-                    "Highland Zone",
-                  ].map((item, index) => (
-                    <li
-                      key={index}
-                      className="flex items-center text-gray-600 hover:text-yellow-600 transition-colors"
+            ))}
+          </div>
+
+          {/* Contact Form Section */}
+          <ContactForm />
+
+          {/* Additional Information */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <span className="bg-yellow-100 p-2 rounded-lg mr-3">
+                  <svg
+                    className="w-6 h-6 text-yellow-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+                Our Commitment
+              </h2>
+              <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+                At RD Builders, we're committed to providing exceptional service
+                and quality craftsmanship. Our team of experienced professionals
+                is ready to assist you with:
+              </p>
+              <ul className="space-y-4 text-gray-600">
+                {[
+                  "Free project consultations",
+                  "Detailed project estimates",
+                  "Expert construction advice",
+                  "Emergency construction services",
+                  "Renovation planning assistance",
+                ].map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center hover:text-yellow-600 transition-colors"
+                  >
+                    <svg
+                      className="w-5 h-5 mr-3 text-yellow-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      <svg
-                        className="w-4 h-4 mr-2 text-yellow-500"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <span className="bg-yellow-100 p-2 rounded-lg mr-3">
+                  <svg
+                    className="w-6 h-6 text-yellow-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                  </svg>
+                </span>
+                Service Areas
+              </h2>
+              <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+                We provide our construction services throughout the following
+                areas:
+              </p>
+              <div className="grid grid-cols-2 gap-8">
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4 text-lg">
+                    Primary Regions
+                  </h3>
+                  <ul className="space-y-3">
+                    {[
+                      "Construction City",
+                      "Builder's Valley",
+                      "Architect Town",
+                      "Developer's District",
+                    ].map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center text-gray-600 hover:text-yellow-600 transition-colors"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                        <svg
+                          className="w-4 h-4 mr-2 text-yellow-500"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4 text-lg">
+                    Extended Areas
+                  </h3>
+                  <ul className="space-y-3">
+                    {[
+                      "Metro Region",
+                      "Suburban District",
+                      "Coastal Area",
+                      "Highland Zone",
+                    ].map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center text-gray-600 hover:text-yellow-600 transition-colors"
+                      >
+                        <svg
+                          className="w-4 h-4 mr-2 text-yellow-500"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
