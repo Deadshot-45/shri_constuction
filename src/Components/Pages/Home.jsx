@@ -431,12 +431,12 @@ const Home = () => {
                 There are many ways to contact us. You may drop us a line, give
                 us a call or send an email, choose what suits you the most.
               </p>
-              <button
-                type="button"
+              <Link
+                to={"/projects"}
                 className="w-[200px] bg-[#fdc700] text-gray-800 px-6 py-3 font-bold hover:bg-[#ffd027] transition duration-300 ease-in-out mt-4"
               >
                 OUR PROJECTS
-              </button>
+              </Link>
             </div>
             <div className="w-[50%] max-lg:w-[40%] relative mx-auto flex justify-center items-center">
               <img
