@@ -1,46 +1,68 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="flex bg-gray-800 py-4 px-6 z-999 absolute w-full top-0">    
+    <nav className="flex bg-gray-800 py-4 px-6 z-999 absolute w-full top-0">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <span className="text-2xl font-sans font-bold text-yellow-500">
+          <Link
+            to={"/"}
+            prloading="lazy"
+            className="text-2xl cursor-pointer font-sans font-bold text-yellow-500"
+          >
             Shri Construction
-          </span>
+          </Link>
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <Link
+        <NavLink
           to="/"
-          className="text-white text-lg font-mono mx-4 hover:text-yellow-500
-                transition duration-300 ease-in-out"
+          className={({ isActive }) =>
+            `text-lg font-mono mx-4  ${
+              isActive
+                ? "text-yellow-500 font-bold"
+                : "text-gray-300 hover:text-yellow-500 transition duration-300 ease-in-out"
+            }`
+          }
         >
           Home
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/about"
-          className="text-white text-lg font-mono mx-4 hover:text-yellow-500
-                transition duration-300 ease-in-out"
+          className={({ isActive }) =>
+            `text-lg font-mono mx-4  ${
+              isActive
+                ? "text-yellow-500 font-bold"
+                : "text-gray-300 hover:text-yellow-500 transition duration-300 ease-in-out"
+            }`
+          }
         >
           About
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/projects"
-          className="text-white text-lg font-mono mx-4 hover:text-yellow-500
-            transition duration-300 ease-in-out"
+          className={({ isActive }) =>
+            `text-lg font-mono mx-4  ${
+              isActive
+                ? "text-yellow-500 font-bold"
+                : "text-gray-300 hover:text-yellow-500 transition duration-300 ease-in-out"
+            }`
+          }
         >
           Projects
-        </Link>
-        <Link
-            to="/contact"
-            className="text-white text-lg font-mono mx-4 hover:text-yellow-500
-                transition duration-300 ease-in-out"
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            `text-lg font-mono mx-4 hover:text-yellow-500
+                  transition duration-300 ease-in-out   ${
+                    isActive ? "text-yellow-500 font-bold" : "text-gray-300"
+                  }`
+          }
         >
-            Contact
-        </Link>
-
+          Contact
+        </NavLink>
       </div>
     </nav>
   );
