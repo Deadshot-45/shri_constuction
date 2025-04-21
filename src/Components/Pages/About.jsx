@@ -7,7 +7,8 @@ const About = () => {
     <div className="flex flex-col items-center min-h-screen">
       {/* Hero Section */}
       <div className="relative w-full h-[50vh] flex items-center justify-center">
-        <img
+        <img lazyLoad="true"
+          loading="lazy" 
           src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
           alt="Construction site"
           className="absolute w-full h-full object-cover"
@@ -22,18 +23,19 @@ const About = () => {
         <section className="flex gap-12 items-center">
           <div className="w-1/2 space-y-6">
             <h2 className="text-4xl font-bold text-gray-800">
-              Building Excellence Since 2025
+              Building Excellence Since 2023
             </h2>
             <div className="w-[15%] h-1 bg-amber-500" />
             <p className="text-gray-600 leading-relaxed">
               At Shri Construction, we've been transforming skylines and
-              building dreams for over 25 years. Our commitment to quality,
+              building dreams for over 3 years. Our commitment to quality,
               innovation, and customer satisfaction has made us a leader in the
               construction industry.
             </p>
           </div>
           <div className="w-1/2">
-            <img
+            <img lazyLoad="true"
+          loading="lazy" 
               src="https://png.pngtree.com/thumb_back/fh260/background/20240620/pngtree-painting-of-a-contemporary-building-construction-site-on-white-background-including-image_15883562.jpg"
               alt="Company overview"
               className="rounded-lg shadow-lg"
@@ -46,11 +48,11 @@ const About = () => {
           {[
             {
               icon: BiBuildingHouse,
-              count: "500+",
+              count: "50+",
               label: "Projects Completed",
             },
-            { icon: FaUsers, count: "250+", label: "Expert Team" },
-            { icon: FaTools, count: "25+", label: "Years Experience" },
+            { icon: FaUsers, count: "20+", label: "Expert Team" },
+            { icon: FaTools, count: "3+", label: "Years Experience" },
             { icon: FaMedal, count: "100%", label: "Client Satisfaction" },
           ].map((stat, index) => (
             <div
