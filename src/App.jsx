@@ -7,26 +7,29 @@ import About from "./Components/Pages/About";
 import Contact from "./Components/Pages/Contact";
 import ScrollToTop from "./Components/Common/ScrollToTop";
 import Projects from "./Components/Pages/Projects";
+import PageNotFound from "./Components/Common/PageNotFound";
+import ErrorOutOfBoundary from "./Components/Common/ErrorOutOfBoundary";
 
 const App = () => {
   return (
     <div className="min-h-screen">
-      
-      <Router>
-        <ScrollToTop />
-        <NavBar />
-        <div className="my-16">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Home />} />
-            {/* Redirect to Home for any undefined routes */}
-          </Routes>
-        </div>
-        <Footer />
-      </Router>
+      <ErrorOutOfBoundary>
+        <Router>
+          <ScrollToTop />
+          <NavBar />
+          <div className="my-16">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<PageNotFound />} />
+              {/* Redirect to Home for any undefined routes */}
+            </Routes>
+          </div>
+          <Footer />
+        </Router>
+      </ErrorOutOfBoundary>
     </div>
   );
 };
