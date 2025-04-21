@@ -1,6 +1,33 @@
 import React from "react";
 import { toast, ToastContainer } from "react-toastify";
 
+const Validator = (value) => {
+  const phoneRegex = /^[0-9]{10}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (value.name.length < 3) {
+    toast.error("Name must be at least 3 characters long.");
+    return false;
+  }
+  if (!emailRegex.test(value.email)) {
+    toast.error("Please enter a valid email address.");
+    return false;
+  }
+  if (value.phone && !phoneRegex.test(value.phone)) {
+    toast.error("Phone number must be 10 digits long.");
+    return false;
+  }
+  if (value.subject.length < 3) {
+    toast.error("Subject must be at least 3 characters long.");
+    return false;
+  }
+  if (value.message.length < 10) {
+    toast.error("Message must be at least 10 characters long.");
+    return false;
+  }
+  return true;
+};
+import "react-toastify/dist/ReactToastify.css";
+
 const ContactForm = () => {
   const [formData, setFormData] = React.useState({
     name: "",
@@ -21,6 +48,10 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Call the API to send the inquiry data
+    if (!Validator(formData)) {
+      return;
+    }
+    // Simulate API call
     console.log("Sending inquiry data:", formData);
     setIsLoading(true);
     toast.success("Inquiry submitted successfully!");
@@ -33,7 +64,7 @@ const ContactForm = () => {
         subject: "",
         message: "",
       });
-    }, 5000); // Simulate API call
+    }, 5000); // Simulate a 5-second delay for form clearing 
   };
   return (
     <>
