@@ -6,7 +6,7 @@ const Validator = (value) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (value.name.length < 3) {
     toast.error("Name must be at least 3 characters long.");
-    return false;
+    return false; 
   }
   if (!emailRegex.test(value.email)) {
     toast.error("Please enter a valid email address.");

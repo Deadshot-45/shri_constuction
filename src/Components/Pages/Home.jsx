@@ -3,10 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 import { images } from "../../assets/images";
 import { Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { AiFillLike } from "react-icons/ai";
 import { BiLike } from "react-icons/bi";
 import { TiStopwatch } from "react-icons/ti";
 import { IoDiamondOutline } from "react-icons/io5";
+import { Projects, Testimony, NewsSection } from "../../assets/AppAssests";
 
 const Home = () => {
   const [testimonyIndex, setTestimonyIndex] = React.useState(0);
@@ -19,122 +19,12 @@ const Home = () => {
     );
   };
 
-  // Sample data for projects and testimonies
-  const Projects = [
-    {
-      src: "https://img.freepik.com/free-photo/infrastructure-bridge_1127-2225.jpg?semt=ais_hybrid&w=740",
-      alt: "Project 1",
-      title: "Project 1",
-      description: "This is a description of project 1",
-    },
-    {
-      src: "https://static.vecteezy.com/system/resources/previews/046/295/794/non_2x/road-construction-teamwork-asphalt-laying-work-at-road-construction-sites-hot-asphalt-gravel-being-leveled-and-road-surface-repairs-by-heavy-road-construction-machineries-and-workers-photo.jpg",
-      alt: "Project 2",
-      title: "Project 2",
-      description: "This is a description of project 2",
-    },
-    {
-      src: "https://img.freepik.com/free-photo/empty-tunnel-illuminated_1122-519.jpg",
-      alt: "Project 3",
-      title: "Project 3",
-      description: "This is a description of project 3",
-    },
-    {
-      src: "https://img.freepik.com/free-photo/full-shot-man-construction-site_23-2148751969.jpg?semt=ais_hybrid&w=740",
-      alt: "Project 4",
-      title: "Project 4",
-      description: "This is a description of project 4",
-    },
-    {
-      src: "https://media.istockphoto.com/id/499292388/photo/new-road-construction.jpg?s=612x612&w=0&k=20&c=ZG6aM0sjwSu4W56yJXoKJzmvuaLfA9qSrJj6f0tPNb8=",
-      alt: "Project 5",
-      title: "Project 5",
-      description: "This is a description of project 5",
-    },
-    {
-      src: "https://img.freepik.com/free-photo/waibaidu-bridge-shanghai_1359-943.jpg",
-      alt: "Project 6",
-      title: "Project 6",
-      description: "This is a description of project 6",
-    },
-  ];
-  const Testimony = [
-    {
-      title: "Commercial Developer",
-      message:
-        "Shri Construction's commitment to excellence made our office complex project a remarkable success. Their attention to detail and timely delivery exceeded our expectations.",
-      person: "John Anderson",
-    },
-    {
-      title: "Property Owner",
-      message:
-        "The renovation of our heritage building was handled with exceptional care. Their team showed great respect for the property's history while modernizing its facilities.",
-      person: "Sarah Mitchell",
-    },
-    {
-      title: "Factory Manager",
-      message:
-        "Our industrial facility was completed ahead of schedule without compromising on quality. Their expertise in handling complex industrial projects is outstanding.",
-      person: "Robert Chen",
-    },
-    {
-      title: "Municipal Engineer",
-      message:
-        "Working with Shri Construction on our infrastructure projects has been a pleasure. They understand regulatory requirements and deliver quality within budget.",
-      person: "Emily Rodriguez",
-    },
-    {
-      title: "Real Estate Developer",
-      message:
-        "Having worked with them on multiple projects, their consistency in delivering high-quality construction and professional project management is remarkable.",
-      person: "Michael Kumar",
-    },
-    {
-      title: "School Principal",
-      message:
-        "The construction of our new academic block was executed flawlessly. Their team ensured minimal disruption to ongoing classes while maintaining safety standards.",
-      person: "Patricia Thompson",
-    },
-  ];
-
-  // Sample data for news section
-  const NewsSection = [
-    {
-      img: "https://htmlbeans.com/html/vicin/images/img06.jpg",
-      title: "New Project Launch: Eco-Friendly Housing Complex",
-      description:
-        "Shri Construction is proud to announce the launch of its latest project, an eco-friendly housing complex designed to provide sustainable living solutions.",
-      date: "September 15, 2023",
-    },
-    {
-      img: "https://htmlbeans.com/html/vicin/images/img07.jpg",
-      title: "Award-Winning Project: Modern Office Tower",
-      description:
-        "Our modern office tower project has been recognized with the prestigious 'Best Commercial Building' award at the National Architecture Awards.",
-      date: "August 10, 2023",
-    },
-    {
-      img: "https://htmlbeans.com/html/vicin/images/img08.jpg",
-      title: "Shri Construction Expands Its Operations",
-      description:
-        "We are excited to announce the expansion of our operations to new regions, further solid ifying our position as a leading construction company.",
-      date: "June 20, 2023",
-    },
-    {
-      img: "https://htmlbeans.com/html/vicin/images/img09.jpg",
-      title: "Innovative Construction Techniques",
-      description:
-        "Our team of experts is committed to adopting the latest construction techniques to ensure efficient and high-quality results. We are constantly exploring new methods to enhance our construction processes.",
-      date: "May 5, 2023",
-    },
-  ];
-
   return (
     <div className="flex flex-col items-center min-h-screen space-y-8">
       <div className="w-full flex items-center justify-center">
-        <header className="relative w-full h-screen overflow-hidden">
+        <header className="relative w-full h-screen max-xs:h-[90dvh] overflow-hidden">
           <img
-            lazyLoad="true"
+            lazyload="true"
             loading="lazy"
             src={
               "https://png.pngtree.com/thumb_back/fw800/background/20240611/pngtree-construction-machine-road-repair-work-image_15747549.jpg"
@@ -195,7 +85,7 @@ const Home = () => {
         </div>
         <div className="w-[30%] max-md:w-3/4 flex justify-center items-center">
           <img
-            lazyLoad="true"
+            lazyload="true"
             loading="lazy"
             src={images.home.features.quality.src}
             alt={images.home.features.quality.alt}
@@ -208,7 +98,7 @@ const Home = () => {
       <section className="w-full h-[40dvh] max-xs:h-[50dvh] flex justify-center items-center">
         <div className="w-full h-full relative">
           <img
-            lazyLoad="true"
+            lazyload="true"
             loading="lazy"
             src="https://www.grantthornton.in/globalassets/1.-member-firms/india/new-homepage/media/1.-hero-banners_repeat-visits/1440x600px_hero_banner_shutterstock_1679316820.jpg"
             alt="Road construction bg"
@@ -219,13 +109,15 @@ const Home = () => {
         <div className="absolute z-6000 flex justify-evenly items-center text-center">
           <div className="w-[15%] max-lg:w-[25%] space-y-4 min-xs:max-xs:space-y-1">
             <img
-              lazyLoad="true"
+              lazyload="true"
               loading="lazy"
               src="https://htmlbeans.com/html/vicin/images/icon01.png"
               alt="trolly"
               className="w-[80px] max-xs:w-[50px] max-md:w-[60px] mx-auto aspect-auto"
             />
-            <h1 className="text-3xl font-bold max-xs:text-sm min-xs:max-md:text-xl text-white">Construction</h1>
+            <h1 className="text-3xl font-bold max-xs:text-sm min-xs:max-md:text-xl text-white">
+              Construction
+            </h1>
             <p className="text-white text-sm max-xs:text-[11px] min-xs:max-sm:text-[12px]">
               Mauris quam neque, ullamcorper sit amet lorem in, aliquet sagittis
               ante. Nulla enim velit, porttitor sed magna at, porttitor.
@@ -233,13 +125,15 @@ const Home = () => {
           </div>
           <div className="w-[15%] max-lg:w-[25%] space-y-4 min-xs:max-xs:space-y-1">
             <img
-              lazyLoad="true"
+              lazyload="true"
               loading="lazy"
               src="https://htmlbeans.com/html/vicin/images/icon02.png"
               alt="plumbing"
               className="w-[80px] max-xs:w-[40px] max-md:w-[60px] mx-auto aspect-auto"
             />
-            <h1 className="text-3xl font-bold max-xs:text-sm min-xs:max-md:text-xl text-white">Plumbing</h1>
+            <h1 className="text-3xl font-bold max-xs:text-sm min-xs:max-md:text-xl text-white">
+              Plumbing
+            </h1>
             <p className="text-white text-sm max-xs:text-[11px] min-xs:max-sm:text-[12px]">
               Mauris quam neque, ullamcorper sit amet lorem in, aliquet sagittis
               ante. Nulla enim velit, porttitor sed magna at, porttitor.
@@ -247,13 +141,15 @@ const Home = () => {
           </div>
           <div className="w-[15%] max-lg:w-[25%] space-y-4 min-xs:max-xs:space-y-1 ">
             <img
-              lazyLoad="true"
+              lazyload="true"
               loading="lazy"
               src="https://htmlbeans.com/html/vicin/images/icon03.png"
               alt="roofing"
               className="w-[80px] max-xs:w-[40px] max-md:w-[60px] mx-auto aspect-auto"
             />
-            <h1 className="text-3xl font-bold max-xs:text-sm min-xs:max-md:text-xl text-white">Roofing</h1>
+            <h1 className="text-3xl font-bold max-xs:text-sm min-xs:max-md:text-xl text-white">
+              Roofing
+            </h1>
             <p className="text-white text-sm max-xs:text-[11px] min-xs:max-sm:text-[12px]">
               Mauris quam neque, ullamcorper sit amet lorem in, aliquet sagittis
               ante. Nulla enim velit, porttitor sed magna at, porttitor.
@@ -277,7 +173,7 @@ const Home = () => {
               className="w-[350px] max-lg:w-[45%] cursor-pointer aspect-auto relative group overflow-hidden shadow-lg"
             >
               <img
-                lazyLoad="true"
+                lazyload="true"
                 loading="lazy"
                 src={project.src}
                 alt={project.alt}
@@ -300,7 +196,7 @@ const Home = () => {
       <section className="w-full  flex justify-center items-center">
         <div className="w-full h-[45dvh] relative ">
           <img
-            lazyLoad="true"
+            lazyload="true"
             loading="lazy"
             src="https://htmlbeans.com/html/vicin/images/img17.jpg"
             alt="Testimony bg"
@@ -354,7 +250,7 @@ const Home = () => {
           <div className="w-[45%] max-lg:w-[80%] flex gap-2 mx-auto p-8 max-lg:p-0">
             <div className="w-1/2">
               <img
-                lazyLoad="true"
+                lazyload="true"
                 loading="lazy"
                 src={
                   "https://img.freepik.com/free-photo/aerial-view-suzhou-overpass-night_1359-524.jpg"
@@ -365,7 +261,7 @@ const Home = () => {
             </div>
             <div className="w-1/2 space-y-2">
               <img
-                lazyLoad="true"
+                lazyload="true"
                 loading="lazy"
                 src={
                   "https://img.freepik.com/free-photo/young-man-holding-construction-hard-hat_23-2148461532.jpg"
@@ -374,7 +270,7 @@ const Home = () => {
                 className="w-full h-w-[48%] object-cover rounded-sm shadow-lg"
               />
               <img
-                lazyLoad="true"
+                lazyload="true"
                 loading="lazy"
                 src={
                   "https://img.freepik.com/free-photo/young-man-holding-construction-hard-hat_23-2148461532.jpg"
@@ -412,16 +308,16 @@ const Home = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="w-full h-full bg-white py-20">
+      <section className="w-full h-full bg-white py-20 ">
         <div className="w-full h-[45dvh] max-sm:h-[35dvh] relative">
           <img
-            lazyLoad="true"
+            lazyload="true"
             loading="lazy"
             src="https://htmlbeans.com/html/vicin/images/img05.jpg"
             alt="Project bg"
             className="w-full h-full absolute rounded-sm shadow-lg"
           />
-          <div className="flex relative z-500 w-[80%] max-sm:w-[95%] mx-auto h-full">
+          <div className="flex relative z-500 w-[80%] max-[700px]:w-[95%] mx-auto h-full">
             <div className="w-[35%] max-lg:w-[60%] flex flex-col justify-center gap-3">
               <span className="text-3xl max-sm:text-[16px] w-[85%] uppercase font-bold text-gray-700">
                 We are always ready to help you
@@ -437,15 +333,13 @@ const Home = () => {
                 OUR PROJECTS
               </Link>
             </div>
-            <div className="w-[50%] max-lg:w-[40%] relative mx-auto flex justify-center items-center">
               <img
-                lazyLoad="true"
+                lazyload="true"
                 loading="lazy"
                 src="	https://htmlbeans.com/html/vicin/images/img13.png"
                 alt="Working men"
-                className="w-[350px] max-lg:w-[300px] absolute top-[-20%] h-[120%]"
+                className="w-[400px] max-lg:min-[700px]::w-[320px] max-[700px]:w-[200px] absolute top-[-20%] right-0 h-[120%]"
               />
-            </div>
           </div>
         </div>
       </section>
@@ -469,7 +363,7 @@ const Home = () => {
             >
               <div className="w-[250px] max-xs:w-[130px] cursor-pointer h-[130px] max-xs:h-[100px] mx-auto relative overflow-hidden group">
                 <img
-                  lazyLoad="true"
+                  lazyload="true"
                   loading="lazy"
                   src={news.img}
                   alt={news.title}

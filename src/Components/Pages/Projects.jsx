@@ -1,30 +1,8 @@
 import React from "react";
-import { images } from "../../assets/images";
+import { projects } from "../../assets/AppAssests.js"; // Assuming you have a data file with project details
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Modern Villa",
-      description: "Luxury villa with contemporary design",
-      category: "Residential",
-      status: "Completed",
-      image: images.projects.modernVilla,
-    },
-    {
-      title: "Office Complex",
-      description: "Multi-story commercial building",
-      category: "Commercial",
-      status: "In Progress",
-      image: images.projects.officeComplex,
-    },
-    {
-      title: "Shopping Mall",
-      description: "Modern retail space with parking",
-      category: "Commercial",
-      status: "Completed",
-      image: images.projects.shoppingMall,
-    },
-  ];
+  
 
   return (
     <div className="min-h-screen py-20 w-[80%] mx-auto">
@@ -37,10 +15,10 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="pop-up-animation bg-white rounded-lg shadow-md overflow-hidden"
             >
               <div className="h-48 relative">
-                <img lazyLoad="true"
+                <img lazyload="true"
           loading="lazy" 
                   src={project.image.src}
                   alt={project.image.alt}

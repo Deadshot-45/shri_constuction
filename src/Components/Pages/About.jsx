@@ -7,7 +7,7 @@ const About = () => {
     <div className="flex flex-col items-center min-h-screen">
       {/* Hero Section */}
       <div className="relative w-full h-[50vh] flex items-center justify-center">
-        <img lazyLoad="true"
+        <img lazyload="true"
           loading="lazy" 
           src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
           alt="Construction site"
@@ -34,7 +34,7 @@ const About = () => {
             </p>
           </div>
           <div className="w-1/2 max-sm:w-[90%]">
-            <img lazyLoad="true"
+            <img lazyload="true"
           loading="lazy" 
               src="https://png.pngtree.com/thumb_back/fh260/background/20240620/pngtree-painting-of-a-contemporary-building-construction-site-on-white-background-including-image_15883562.jpg"
               alt="Company overview"

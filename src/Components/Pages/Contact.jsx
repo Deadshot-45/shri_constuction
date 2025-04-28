@@ -1,5 +1,5 @@
 import React from "react";
-import { ToastContainer} from "react-toastify";
+// import { contactDetails } from "../../assets/AppAssests";
 import "react-toastify/dist/ReactToastify.css";
 import ContactForm from "../ContactForm";
 
@@ -116,7 +116,7 @@ const Contact = () => {
       ],
     },
   ];
-
+  
   return (
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -138,7 +138,7 @@ const Contact = () => {
             {contactDetails.map((item, index) => (
               <div
                 key={index}
-                className="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100"
+                className="pop-up-animation group bg-white p-8 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100"
               >
                 <div className="flex flex-col items-center justify-center">
                   <div className="mb-6 bg-yellow-50 p-4 rounded-full">
