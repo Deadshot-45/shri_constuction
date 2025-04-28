@@ -9,6 +9,7 @@ import ScrollToTop from "./Components/Common/ScrollToTop";
 import Projects from "./Components/Pages/Projects";
 import PageNotFound from "./Components/Common/PageNotFound";
 import ErrorOutOfBoundary from "./Components/Common/ErrorOutOfBoundary";
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 const App = () => {
   return (
@@ -28,6 +29,12 @@ const App = () => {
             </Routes>
           </div>
           <Footer />
+          <SpeedInsights
+            projectId="your-project-id" // Replace with your actual project ID
+            className="fixed bottom-0 right-0 m-4"
+            style={{ zIndex: 9999 }} // Adjust z-index to ensure it appears above other elements
+            theme="dark" // Optional: Set the theme to dark or light
+            />
         </Router>
       </ErrorOutOfBoundary>
     </div>
