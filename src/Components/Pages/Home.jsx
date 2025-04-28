@@ -21,8 +21,8 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center min-h-screen space-y-8">
-      <div className="w-full flex items-center justify-center">
-        <header className="relative w-full h-screen max-xs:h-[90dvh] overflow-hidden">
+      {/* <div className="w-full flex items-center justify-center"> */}
+        <header className="relative w-full h-screen max-xs:h-[95dvh] overflow-hidden">
           <img
             lazyload="true"
             loading="lazy"
@@ -49,14 +49,14 @@ const Home = () => {
               Building dreams with precision and care.
             </p>
             <Link
-              to="/"
+              to="/contact"
               className="bg-[#fdc700] max-xs:text-sm text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-[#ffd027] transition duration-300 ease-in-out"
             >
               Get Started
             </Link>
           </div>
         </header>
-      </div>
+      {/* </div> */}
 
       {/* Experience Section */}
       <section className="w-[80%] max-xs:w-[85%] flex max-md:flex-col justify-between items-center py-12 max-xs:pt-0">
@@ -345,7 +345,6 @@ const Home = () => {
       </section>
 
       {/* News Section */}
-
       <section className="w-full h-full bg-white">
         <div className="min-w-1/2 mx-auto space-y-2.5">
           <h2 className="text-3xl font-bold text-center text-gray-700 uppercase">
