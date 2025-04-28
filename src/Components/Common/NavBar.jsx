@@ -4,17 +4,43 @@ import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  
+  const [title, setTitle] = React.useState("");
+  const [showCursor, setShowCursor] = React.useState(true);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
-  ];
+  const navLinks = React.useMemo(
+    () => [
+      { name: "Home", path: "/" },
+      { name: "About", path: "/about" },
+      { name: "Projects", path: "/projects" },
+      { name: "Contact", path: "/contact" },
+    ],
+    []
+  );
+
+  const name = "Shri Construction";
+  React.useEffect(() => {
+    let i = 0;
+    setTitle(""); // Initialize title to an empty string
+    setShowCursor(true); // Show cursor at the beginning
+
+    const typingInterval = setInterval(() => {
+      if (i < name.length) {
+        setTitle(name.slice(0, i + 1));
+        i++;
+        if (i === name.length) {
+          // When typing completes, hide the cursor
+          setShowCursor(false);
+          clearInterval(typingInterval);
+        }
+      }
+    }, 150); // Typing speed
+
+    return () => clearInterval(typingInterval);
+  }, [name]);
 
   return (
     <nav className="flex bg-gray-800 py-4 px-6 z-50 relative w-full">
@@ -24,7 +50,9 @@ const NavBar = () => {
             to={"/"}
             className="text-2xl max-sm:text-xl cursor-pointer font-sans font-bold text-yellow-500"
           >
-            Shri Construction
+            {title.length > 0 ? title : name} {/* Display the title */}
+            {showCursor && <span className="text-yellow-500  ">|</span>}{" "}
+            {/* Show cursor if needed */}
           </Link>
         </div>
         <div className="max-xs:hidden flex justify-center space-x-10 max-sm:space-x-3 items-center">
