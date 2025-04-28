@@ -17,12 +17,12 @@ const Projects = () => {
               key={index}
               className="pop-up-animation bg-white rounded-lg shadow-md overflow-hidden"
             >
-              <div className="h-48 relative">
+              <div className="h-52 relative">
                 <img lazyload="true"
           loading="lazy" 
                   src={project.image.src}
                   alt={project.image.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full"
                 />
               </div>
               <div className="p-6">
